@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>About_Vtech Calculator!</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="utils.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h1 class="text-center">Wellcome to Vtech Calculator!</h1>
+  <div class="container flex flex-col items-center mx-auto m-w-20">
+    <div class="row">
+      <input class="input" type="text" />
+      <div class="row">
+        <button class="button">C</button>
+        <button class="button">%</button>
+        <button class="button">(</button>
+        <button class="button">)</button>
+      </div>
+      <div class="row">
+        <button class="button">7</button>
+        <button class="button">8</button>
+        <button class="button">9</button>
+        <button class="button">*</button>
+      </div>
+      <div class="row">
+        <button class="button">4</button>
+        <button class="button">5</button>
+        <button class="button">6</button>
+        <button class="button">/</button>
+      </div>
+      <div class="row">
+        <button class="button">1</button>
+        <button class="button">2</button>
+        <button class="button">3</button>
+        <button class="button">-</button>
+      </div>
+
+      <div class="row">
+        <button class="button">0</button>
+        <button class="button">.</button>
+        <button class="button">+</button>
+        <button class="button">=</button>
+      </div>
+      <script src="script.js"></script>
+      <p>Made By Virag Pawar</p>
+      <details> Hi everbody This calculator be calculate in all numbers , and multiplaction ,addition , divition and other Thanks for visite the my calculator</details>
+      <details>Hi Everyone I am Virag Pawar(विराग पवार). So I Devloped a Calculator.So I am A founder of a Vtech_Calculator("Vtech Creator")!</details>
+</body>
+
+</html>
+
+<script>
+let string = "";
+let buttons = document.querySelectorAll('.button')
+Array.from(buttons).forEach((button) => {
+  button.addEventListener('click', (e) => {
+    if (e.target.innerHTML == '=') {
+      string = eval(string);
+      document.querySelector('input').value = string;
+    }
+    else if (e.target.innerHTML == 'C') {
+      string = ""
+      document.querySelector('input').value = string;
+    }
+    else {
+      console.log(e.target)
+      string = string + e.target.innerHTML;
+      document.querySelector('input').value = string;
+    }
+  })
+})
+</script>
+
+<style>
+
+html {
+  height: 100%;
+  width: 100%;
+  background-color: gr
+  ;
+}
+
+body {
+  background-image: url(151.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+.button {
+    font-size: 25px;
+    padding: 26px;
+    margin: -1px 4px;
+    border: 3px solid rgb(238, 91, 18);
+    border-radius: 62px;
+    cursor: pointer;
+}
+
+.row {
+  margin: 8px 0;
+}
+
+.row input {
+  font-size: 27px;
+  margin: 3px;
+  padding: 10px 0px;
+  border: 4px solid rgb(238, 91, 18);
+  border-radius: 42px;
+}
+
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 56px;
+  margin-inline-end: 0;
+  unicode-bidi: isolate;
+}
+
+.text-center {
+  text-align: center;
+  color: red;
+  font-style: italic;
+}
+
+.bg red {
+  background: red;
+}
+
+.mx-auto {
+  margin: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+</style>
+
